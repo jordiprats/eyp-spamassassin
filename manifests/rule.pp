@@ -8,7 +8,7 @@ define spamassassin::rule (
                           ) {
   concat::fragment{ "localcf ${rulename}":
     target  => '/etc/mail/spamassassin/local.cf',
-    order   => '00',
+    order   => $order,
     content => template("${module_name}/rule.erb"),
   }
 }
