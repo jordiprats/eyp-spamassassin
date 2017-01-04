@@ -1,0 +1,5 @@
+<%= @ruletype %>		<%= @rulename %>		<%= @expresion %>
+<% if defined?(@description) -%>
+describe	<%= @rulename %>		<%= @description %>
+<% end -%>
+score		<%= @rulename %>		<%= @score %>
