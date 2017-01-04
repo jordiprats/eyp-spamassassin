@@ -11,6 +11,8 @@ class spamassassin::params {
       {
         /^[5-7].*$/:
         {
+          $sysconfig_file='/etc/sysconfig/spamassassin'
+          $sysconfig_template='sysconfig/rh.erb'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -25,6 +27,8 @@ class spamassassin::params {
           {
             /^14.*$/:
             {
+              $sysconfig_file=undef
+              $sysconfig_template=undef
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
