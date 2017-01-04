@@ -43,7 +43,7 @@ management, etc.) this is the time to mention it.
 
 ### Setup Requirements
 
-This module requires pluginsync enabled 
+This module requires pluginsync enabled
 
 ### Beginning with spamassassin
 
@@ -76,7 +76,48 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-TODO list
+* defaults:
+```
+required_score 4.0
+rewrite_header Subject [SPAM]
+report_safe 0
+use_pyzor 0
+skip_rbl_checks 0
+rbl_timeout 5
+use_bayes 1
+use_bayes_rules 1
+bayes_auto_learn 1
+bayes_path /home/spamd/.spamassassin/bayes
+bayes_auto_learn_threshold_spam 10.0
+```
+* Poder afegir regles:
+```
+rawbody		UK_EXPORTS		/ukfoodexports/i
+describe	UK_EXPORTS		Magnifics food exports de UK
+score		UK_EXPORTS		4
+
+body		USTED_SU_PROPIO_JEFE		/Usted mismo ser. su propio jefe/i
+header 		CARRERA_EXITOSA		Subject =~ /Su carrera exitosa/i
+header		MEJORAR_GANANCIAS	Subject =~ /Quiere mejorar sus ganancias/i
+header 		COMPANIA_PROSPERA	Subject =~ /Comiencen el trabajo en una compania prospera/i
+body		VIRGIN_MONEY		/Virgin Money/i
+meta		OFERTES_FEINA_FRAUS	(MEJORAR_GANANCIAS || CARRERA_EXITOSA || COMPANIA_PROSPERA || VIRGIN_MONEY || USTED_SU_PROPIO_JEFE)
+describe	OFERTES_FEINA_FRAUS	Merda de ofertes de feina
+score		OFERTES_FEINA_FRAUS	6
+
+body		TRADUCTOR_AUTOMATIC	/Buscamos a las personas que tienen el derecho de trabajar en Espa/i
+describe	TRADUCTOR_AUTOMATIC	Frase de traductor automatic
+score		TRADUCTOR_AUTOMATIC	6
+
+body 		PETER_WONG_DONEM_LES_TEVES_DADES 	/Peter Wong Shun Tung/i
+describe	PETER_WONG_DONEM_LES_TEVES_DADES	Peter pelma que vol tenir les teves dades
+score		PETER_WONG_DONEM_LES_TEVES_DADES	8
+
+rawbody __AMADEUS1 /BILLETE ELECTRONICO/
+rawbody __AMADEUS2 /LOCALIZADOR DE RESERVA/
+meta AMADEUS ((__AMADEUS1 + __AMADEUS2) > 1)
+score AMADEUS -10
+```
 
 ### Contributing
 
