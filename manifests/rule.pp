@@ -8,6 +8,8 @@
 #     rules starting with a double underscore are evaluated with no score, and are intended for use in meta rules where you don't want the sub-rules to have a score.
 #     although intended for the sa development effort, any rule starting with T_ will be treated as a "test" rule and will be run with a score of 0.01 (nearly 0). This can be handy when testing rules so you don't have to create score lines for them if you think you're not going to keep them.
 #
+# https://wiki.apache.org/spamassassin/WritingRules
+#
 define spamassassin::rule (
                             $score,
                             $ruletype,
