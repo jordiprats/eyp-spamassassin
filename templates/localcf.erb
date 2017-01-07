@@ -21,6 +21,9 @@ use_bayes <%= scope.function_bool2number([@use_bayes]) %>
 use_bayes_rules <%= scope.function_bool2number([@use_bayes_rules]) %>
 bayes_auto_learn <%= scope.function_bool2number([@bayes_auto_learn]) %>
 bayes_auto_learn_threshold_spam <%= @bayes_auto_learn_threshold_spam %>
+bayes_auto_learn_threshold_nonspam <%= @bayes_auto_learn_threshold_nonspam %>
+
+use_auto_whitelist <%= scope.function_bool2number([@use_auto_whitelist]) %>
 
 #
 # CUSTOM RULES
