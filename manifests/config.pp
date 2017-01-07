@@ -12,10 +12,10 @@ class spamassassin::config inherits spamassassin {
   }
 
   concat { '/etc/mail/spamassassin/local.cf':
-    ensure  => 'present',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
   }
 
   concat::fragment{ 'localcf header':
