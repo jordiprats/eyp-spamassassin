@@ -6,7 +6,7 @@ class spamassassin(
                     $service_ensure                  = 'running',
                     $service_enable                  = true,
                     $spamd_max_children              = '5',
-                    $required_hits                   = '5',
+                    $required_score                  = '5',
                     $report_safe                     = false,
                     $rewrite_header                  = 'Subject [SPAM]',
                     $use_pyzor                       = false,
