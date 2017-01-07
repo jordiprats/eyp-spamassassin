@@ -9,8 +9,13 @@
 # without risking lost emails.
 
 required_hits <%= @required_hits %>
-report_safe <%= @report_safe %>
+report_safe <%= scope.function_bool2number(@report_safe) %>
 rewrite_header <%= @rewrite_header %>
+
+use_pyzor <%= scope.function_bool2number(@use_pyzor) %>
+
+skip_rbl_checks <%= scope.function_bool2number(@skip_rbl_checks) %>
+rbl_timeout <%= @rbl_timeout %>
 
 #
 # CUSTOM RULES
