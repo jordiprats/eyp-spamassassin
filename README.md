@@ -47,11 +47,9 @@ This module requires pluginsync enabled
 
 ### Beginning with spamassassin
 
-The very basic steps needed for a user to get the module up and running.
+This module defaults are based on:
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+https://wiki.apache.org/spamassassin/BasicConfiguration
 
 ## Usage
 
