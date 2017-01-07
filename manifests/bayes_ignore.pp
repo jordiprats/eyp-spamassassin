@@ -11,7 +11,7 @@ define spamassassin::bayes_ignore (
     concat::fragment{ "localcf bayes_ignore ${ignore_email} from":
       target  => '/etc/mail/spamassassin/local.cf',
       order   => '99',
-      content => "bayes_ignore_from $ignore_email\n",
+      content => "bayes_ignore_from ${ignore_email}\n",
     }
   }
 
@@ -20,7 +20,7 @@ define spamassassin::bayes_ignore (
     concat::fragment{ "localcf bayes_ignore ${ignore_email} to":
       target  => '/etc/mail/spamassassin/local.cf',
       order   => '99',
-      content => "bayes_ignore_to $ignore_email\n",
+      content => "bayes_ignore_to ${ignore_email}\n",
     }
   }
 
